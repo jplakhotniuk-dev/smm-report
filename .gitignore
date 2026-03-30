@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Numbers / Excel source files
+*.numbers
+*.xlsx
+*.xls
+*.csv
+
+# Debug / working screenshots not part of the report
+fusion-table-*.png
+
+# Internal scripts & automation tools
+scripts/
+skills/
+
+# Raw JSON analytics dumps
+*.json
+
+# Playwright CLI internals
+.playwright-cli/
