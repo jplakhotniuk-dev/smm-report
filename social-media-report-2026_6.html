@@ -31,6 +31,52 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  /* ── PASSWORD GATE ──────────────────────────────────── */
+  #pw-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #pw-gate.hidden { display: none; }
+  #pw-box {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 36px 40px; width: 340px;
+    text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+  #pw-logo {
+    font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--text3);
+    margin-bottom: 20px;
+  }
+  #pw-title {
+    font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 6px;
+  }
+  #pw-sub {
+    font-size: 12px; color: var(--text2); margin-bottom: 22px;
+  }
+  #pw-input {
+    width: 100%; padding: 9px 12px; font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--surface2); color: var(--text);
+    outline: none; margin-bottom: 12px;
+    transition: border-color 0.15s;
+  }
+  #pw-input:focus { border-color: var(--text3); }
+  #pw-input.pw-error { border-color: var(--down); }
+  #pw-btn {
+    width: 100%; padding: 9px; font-size: 13px; font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--text); color: #fff;
+    border: none; border-radius: 6px; cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  #pw-btn:hover { opacity: 0.85; }
+  #pw-err {
+    font-size: 11px; color: var(--down); margin-top: 10px;
+    min-height: 16px;
+  }
+
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--bg);
@@ -894,6 +940,18 @@
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <div id="pw-box">
+    <div id="pw-logo">Devoted Studios · SMM Report</div>
+    <div id="pw-title">Enter password to continue</div>
+    <div id="pw-sub">This report is confidential.</div>
+    <input id="pw-input" type="password" placeholder="Password" autocomplete="current-password" />
+    <button id="pw-btn">Unlock</button>
+    <div id="pw-err"></div>
+  </div>
+</div>
 <div class="page">
 
   <header class="report-header">
@@ -3148,6 +3206,57 @@
 
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+    })();
+  </script>
+
+  <!-- PASSWORD GATE LOGIC -->
+  <script>
+    (function () {
+      var HASH = '6458052c3f8a05ee3e2968d4f0b4c5c68b8ec6eafba8d10122f43ce09d488185';
+      var gate  = document.getElementById('pw-gate');
+      var input = document.getElementById('pw-input');
+      var btn   = document.getElementById('pw-btn');
+      var err   = document.getElementById('pw-err');
+
+      // Already unlocked this session?
+      if (sessionStorage.getItem('smm_unlocked') === '1') {
+        gate.classList.add('hidden');
+        return;
+      }
+
+      function sha256(str) {
+        var buf = new TextEncoder().encode(str);
+        return crypto.subtle.digest('SHA-256', buf).then(function (hash) {
+          return Array.from(new Uint8Array(hash))
+            .map(function (b) { return b.toString(16).padStart(2, '0'); })
+            .join('');
+        });
+      }
+
+      function attempt() {
+        var val = input.value;
+        if (!val) return;
+        sha256(val).then(function (digest) {
+          if (digest === HASH) {
+            sessionStorage.setItem('smm_unlocked', '1');
+            gate.classList.add('hidden');
+          } else {
+            input.classList.add('pw-error');
+            err.textContent = 'Incorrect password. Please try again.';
+            input.value = '';
+            input.focus();
+          }
+        });
+      }
+
+      btn.addEventListener('click', attempt);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') attempt();
+        input.classList.remove('pw-error');
+        err.textContent = '';
+      });
+
+      input.focus();
     })();
   </script>
 
