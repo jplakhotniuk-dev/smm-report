@@ -881,6 +881,21 @@
   .insight-warn { border-color: var(--warn-border); }
   .insight-idea { border-color: #A8C0F0; }
   .insight-ceo-item strong { color: var(--text); font-weight: 500; }
+  /* 4-section insight layout */
+  .insight-grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 2px; }
+  .insight-sect { border-radius: 5px; padding: 8px 10px; font-size: 11px; line-height: 1.55; color: var(--text2); }
+  .insight-sect-lbl { font-size: 8.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; display: block; }
+  .is-worked  { background: var(--up-bg);   border-left: 2px solid var(--up); }
+  .is-worked  .insight-sect-lbl { color: var(--up); }
+  .is-didnt   { background: var(--down-bg); border-left: 2px solid var(--down); }
+  .is-didnt   .insight-sect-lbl { color: var(--down); }
+  .is-next    { background: var(--warn-bg); border-left: 2px solid var(--warn); }
+  .is-next    .insight-sect-lbl { color: var(--warn); }
+  .is-vs      { background: var(--flat-bg); border-left: 2px solid var(--flat); }
+  .is-vs      .insight-sect-lbl { color: var(--flat); }
+  .insight-sect ul { margin: 0; padding-left: 13px; }
+  .insight-sect ul li { margin-bottom: 3px; }
+  .insight-sect ul li:last-child { margin-bottom: 0; }
   .insight-link { color: #2D6BE4; text-decoration: none; font-weight: 500; }
   .insight-link:hover { text-decoration: underline; }
   .insights-p2-list { display: flex; flex-direction: column; gap: 8px; }
@@ -1272,33 +1287,40 @@
         <span class="platform-icon icon-li"></span>
         <span class="snap-brand-dot" style="background:#1A1916;"></span>
         <span class="insight-ceo-name">D.Studios · LinkedIn</span>
-        <span class="insight-ceo-stat delta-up">↑ +659 followers April 2026</span>
+        <span class="insight-ceo-stat delta-up">↑ +659 followers · 19 posts · 11.33% avg eng</span>
       </div>
       <div class="insight-ceo-body">
-        <div class="insight-verdict">✅ Strong month — 19 posts · 11.33% avg eng rate · LinkedIn Ads Apr 15–26</div>
-
-        <!-- April Priorities callout — scoped to DS LinkedIn -->
-        <div class="priorities-card">
-          <div class="priorities-card-header">📌 April priorities · DS LinkedIn</div>
-          <div class="priorities-q">❓ Question of the month: <strong>How to get more reposts of our content?</strong></div>
-          <div style="font-size:11px;font-weight:500;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;">BD &amp; Production focus topics</div>
-          <div class="priorities-list">
-            <span class="prio-tag">#lighting</span>
-            <span class="prio-tag">#weapons</span>
-            <span class="prio-tag">#stylized art</span>
-            <span class="prio-tag">Stephan joining (AD, ex-Overwatch)</span>
-            <span class="prio-tag">Ryan's portfolio</span>
-            <span class="prio-tag">Ask Tanya re: Respawn</span>
+        <div class="insight-grid-2x2">
+          <div class="insight-sect is-worked">
+            <span class="insight-sect-lbl">✅ What worked</span>
+            <ul>
+              <li><strong>Quiz format</strong> — Overwatch concept art quiz hit 47.15% eng rate, highest in channel history. Named talent doc carousels close behind (Ryan weapons: 32.25%, 517 clicks, 3 reposts).</li>
+              <li><strong>Paid amplification</strong> — LinkedIn Ads lifted Last Flag launch 3.5× vs organic avg (4,143 vs ~1,200 impr). Boosting launch/milestone posts = best ROI.</li>
+            </ul>
           </div>
-          <div class="priorities-ira">💡 Note from Ira: Use more <strong>art</strong> in tech carousels</div>
+          <div class="insight-sect is-didnt">
+            <span class="insight-sect-lbl">❌ What didn't</span>
+            <ul>
+              <li><strong>Video posts</strong> averaged 3–5% eng vs 30%+ for document carousels. Video works for awareness but not engagement.</li>
+              <li><strong>Standard reposts</strong> — near-zero engagement across the board. Not worth the slot.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-next">
+            <span class="insight-sect-lbl">💡 Try in May</span>
+            <ul>
+              <li>1 monthly "can you name it?" quiz using art from a DS title — proven highest-eng format.</li>
+              <li>Stephan (new AD, ex-Overwatch) intro carousel — people announcements avg 5× normal reach.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-vs">
+            <span class="insight-sect-lbl">↔ vs. March</span>
+            <ul>
+              <li>Avg eng: <strong>4.2% → 11.33%</strong> (+7.1pp)</li>
+              <li>Followers gained: <strong>+388 → +659</strong> (+70%)</li>
+              <li>Paid campaign added incremental reach not possible organically</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="insight-ceo-item insight-good"><strong>Ryan Lastimosa weapons doc = #1 post by every metric.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447709583214854144/" target="_blank" rel="noopener" class="insight-link">Apr 8 weapons carousel</a> — 1,668 impr · 517 clicks · 32.25% eng rate · 18 reactions · 3 reposts. Document carousels with strong visual identity + named talent = most repostable format. Directly answers Ira's note: art-heavy content works. Replicate for lighting + stylized art topics.</div>
-        <div class="insight-ceo-item insight-good"><strong>FNAF credits post = best video engagement.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7448106081974837248/" target="_blank" rel="noopener" class="insight-link">Apr 9 "gamer vs game developer" video</a> — 1,543 impr., 21 reactions, 2 comments, 4.80% eng. Brand recognition (FNAF) + people framing = strong formula for video format.</div>
-        <div class="insight-ceo-item insight-warn"><strong>Repost pattern emerging — documents + people drive sharing.</strong> Ryan weapons doc: 3 reposts. Apr 1 video: 2 reposts. Naavik Ninel reshare: 1 repost. All other posts: 0. Pattern is clear: named talent + carousel format = repostable. Add "Save and repost if useful" CTA in first comment on every new document post.</div>
-        <div class="insight-ceo-item insight-good"><strong>Overwatch weapons quiz = #1 post of the full month (47.15% eng).</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7453495639914520576/" target="_blank" rel="noopener" class="insight-link">Apr 24 concept art quiz</a> — 1,300 impr · 586 clicks · 22 reactions · 5 reposts. Interactive quiz format outperformed everything including Ryan weapons doc. Formula: iconic IP + "can you name it?" = maximum slide-through + reposts.</div>
-        <div class="insight-ceo-item insight-good"><strong>Last Flag boosted post confirmed paid lift.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7450710740941934592/" target="_blank" rel="noopener" class="insight-link">Apr 17 Last Flag launch</a> — 4,143 impressions (organic avg = ~1,200) · 93 reactions · 8 reposts · 5.79% eng. LinkedIn Ads campaign (Apr 15–26) delivered measurable reach amplification on release-day content. Best use of budget = boosting milestone or launch posts, not evergreen.</div>
-        <div class="insight-ceo-item insight-idea"><strong>Recommendation for May:</strong> run one interactive "can you guess?" quiz post/month — it now has the highest proven eng rate in the channel. Pair with a named talent carousel (Stephan AD, ex-Overwatch) for people + art combination that drives reposts.</div>
       </div>
     </div>
 
@@ -1308,15 +1330,42 @@
         <span class="platform-icon icon-li"></span>
         <span class="snap-brand-dot" style="background:#6B6860;"></span>
         <span class="insight-ceo-name">Ninel Anderson · LinkedIn</span>
-        <span class="insight-ceo-stat delta-up">↑ +142 followers April 2026 (+1.30%)</span>
+        <span class="insight-ceo-stat delta-up">↑ +142 followers · 10 posts · 42,552 impr</span>
       </div>
       <div class="insight-ceo-body">
-        <div class="insight-verdict">✅ 10 posts · 42,552 impressions · 2.45% avg eng rate · 11,024 followers</div>
-        <div class="insight-ceo-item insight-good"><strong>"10 years in America" = 18,389 impressions · 521 engagements · 60 comments.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447070082746310656/" target="_blank" rel="noopener" class="insight-link">Apr 6 personal long-form</a> — 442 reactions, 60 comments. This single post was 43% of all April impressions. The Apr 15 follower spike (+55 in one day) came 9 days after this post as it kept circulating. Personal/vulnerability-led content is the channel's engine — nothing else comes close.</div>
-        <div class="insight-ceo-item insight-good"><strong>"Meow meow" = surprise #2 at 6,923 impressions.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7452429626896883712/" target="_blank" rel="noopener" class="insight-link">Apr 21 playful personal post</a> — 133 engagements, 111 reactions, 16 comments. This is the same pattern as "10 years": authentic, slightly vulnerable, written for humans not algorithms. Combined with the "10 years" post, personal content = 60% of all April impressions.</div>
-        <div class="insight-ceo-item insight-good"><strong>Naavik podcast post was a missing win.</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7450586410010525697/" target="_blank" rel="noopener" class="insight-link">Apr 16 "This time I'm not the one doing the interviewing"</a> — 2,965 impressions, 72 engagements, 67 reactions. This post wasn't in our original tracking. It also drove the Apr 15–16 follower bump alongside DS's paid campaign, confirming that media appearances + personal framing = follower conversion.</div>
-        <div class="insight-ceo-item insight-warn"><strong>Co-dev reshares underperform originals 3:1.</strong> Avg impressions: originals = 6,262 / reshares = 1,539. The FNAF credits reshare (2,086 impr) was the only exception. Reshares serve presence maintenance but don't grow the channel.</div>
-        <div class="insight-ceo-item insight-idea"><strong>Recommendation for May:</strong> GamesBeat Summit speaking slot → post-event reflection post within 48h. Based on the "10 years" pattern, a well-written post-speaking reflection should hit 10K+ impressions. Pair with 1 playful personal post mid-month. Cap reshares at 2/month.</div>
+        <div class="insight-grid-2x2">
+          <div class="insight-sect is-worked">
+            <span class="insight-sect-lbl">✅ What worked</span>
+            <ul>
+              <li><strong>Long-form personal</strong> — "10 years in America" = 18.4K impr, 43% of all April traffic. Authentic storytelling is the channel's engine.</li>
+              <li><strong>Playful authentic posts</strong> — "Meow meow" = 6.9K impr. Same pattern: written for humans, not algorithms.</li>
+              <li><strong>Media appearances</strong> — Naavik podcast = 2.9K impr, drove Apr 15 follower spike (+55 in one day).</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-didnt">
+            <span class="insight-sect-lbl">❌ What didn't</span>
+            <ul>
+              <li><strong>Reshares</strong> underperform originals 3:1 (avg 1,539 vs 6,262 impr). Serve presence but don't grow the channel.</li>
+              <li>Avg eng rate dipped slightly (2.9% → 2.45%) — volume of low-performing reshares dragged the average.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-next">
+            <span class="insight-sect-lbl">💡 Try in May</span>
+            <ul>
+              <li>Post-GamesBeat reflection within 48h — predicting 10K+ impr based on "10 years" pattern.</li>
+              <li>1 playful personal post mid-month.</li>
+              <li>Hard cap: <strong>2 reshares/month max.</strong></li>
+            </ul>
+          </div>
+          <div class="insight-sect is-vs">
+            <span class="insight-sect-lbl">↔ vs. March</span>
+            <ul>
+              <li>Followers: <strong>+67 → +142</strong> (+112%) — best month of 2026</li>
+              <li>Top post: <strong>~10K → 18.4K impr</strong> (+84%)</li>
+              <li>Posts published: <strong>7 → 10</strong></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1326,15 +1375,40 @@
         <span class="platform-icon icon-li"></span>
         <span class="snap-brand-dot" style="background:#9E9B94;"></span>
         <span class="insight-ceo-name">DF · LinkedIn</span>
-        <span class="insight-ceo-stat delta-up">↑ +36 followers April 2026</span>
+        <span class="insight-ceo-stat delta-up">↑ +36 followers · 15 posts · 8.73% avg eng</span>
       </div>
       <div class="insight-ceo-body">
-        <div class="insight-verdict">✅ 15 posts · 8.73% avg eng rate · Faves convert · Reports reach</div>
-        <div class="insight-ceo-item insight-good"><strong>Fusion Faves = consistent 20%+ eng rate across 5 posts.</strong> Samuel B. (23.84%), Helen A. (23.48%), Lukas K. (22.06%), Adrian T. (20%), Guillem (11.83%). All document format. These are the most repostable posts in the channel — featured artists click through every slide and share to their networks.</div>
-        <div class="insight-ceo-item insight-good"><strong>Freelance Report series completed its April run.</strong> 5 report posts across April — Blender (1,676 impr, outlier), AI sentiment (260 impr), Photoshop (228), Western Europe rates (130), Brazil/Argentina (90). Report content generates reach but low conversion — best used to build authority, not drive sign-ups.</div>
-        <div class="insight-ceo-item insight-warn"><strong>3 reposts averaged 2.6% eng at 108 impr</strong> — minimal value. Reposts maintain presence but don't grow the channel. Apr 27 Gamescom repost was the exception (3.77%, 159 impr) because it tied to a live event. Keep reposts to 1/week max, only for time-relevant events.</div>
-        <div class="insight-ceo-item insight-good"><strong>Marina milestone post = highest image eng (9.80%).</strong> <a href="https://www.linkedin.com/feed/update/urn:li:activity:7455318241423523841/" target="_blank" rel="noopener" class="insight-link">Apr 29 Women in Games Ambassador</a> — 102 impr · 7 reactions. People/team milestone posts outperform pure report images. Add 1 team milestone post per month alongside the report series.</div>
-        <div class="insight-ceo-item insight-idea"><strong>Recommendation for May:</strong> pair every Fusion Faves post with a direct tag + personal DM to the featured artist with their Fusion UTM link and a ready-to-copy repost caption. Target 80% repost rate. One report post every 3–4 days. Cap reposts at 1/week.</div>
+        <div class="insight-grid-2x2">
+          <div class="insight-sect is-worked">
+            <span class="insight-sect-lbl">✅ What worked</span>
+            <ul>
+              <li><strong>Fusion Faves</strong> — 5 doc carousels, all 20%+ eng. Artist networks drive clicks and reposts consistently.</li>
+              <li><strong>Team milestones</strong> — Marina Women in Games Ambassador = 9.8% eng, outperformed all report images.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-didnt">
+            <span class="insight-sect-lbl">❌ What didn't</span>
+            <ul>
+              <li><strong>Freelance Report images</strong> — reach was okay (Blender: 1,676 impr) but avg 3.7 clicks per post. Authority content, not conversion.</li>
+              <li><strong>Pure reposts</strong> — 108 impr avg, 2.6% eng. Not worth the slot unless tied to a live event.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-next">
+            <span class="insight-sect-lbl">💡 Try in May</span>
+            <ul>
+              <li>DM each Faves artist within 1h of publish: repost caption + Fusion UTM link. Target: 80% repost rate.</li>
+              <li>1 team milestone post per month alongside the report series.</li>
+            </ul>
+          </div>
+          <div class="insight-sect is-vs">
+            <span class="insight-sect-lbl">↔ vs. March</span>
+            <ul>
+              <li>Avg eng: <strong>4.4% → 8.73%</strong> (+4.3pp)</li>
+              <li>Followers: <strong>+13 → +36</strong> (+177%) — best month in 2026</li>
+              <li>Posts: <strong>13 → 15</strong></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
