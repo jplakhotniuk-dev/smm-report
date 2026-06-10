@@ -113,7 +113,12 @@
   .kpi-delta.down { color: var(--down); }
 
   /* ── PASSWORD GATE ──────────────────────────────────── */
-  #pw-gate { display: none !important; }
+  #pw-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #pw-gate.hidden { display: none; }
   #pw-box {
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 10px; padding: 36px 40px; width: 340px;
@@ -3081,7 +3086,7 @@
     <div style="margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <div>
         <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px;">🗓 Releases & Events</div>
-        <div style="font-size:12px;color:var(--text2);">Devoted portfolio · game releases, conferences &amp; YouTube episodes · May–Jul 2026 · Updated May 31, 2026</div>
+        <div style="font-size:12px;color:var(--text2);">Devoted portfolio · game releases, conferences &amp; YouTube episodes · Jun–Aug 2026 · Updated Jun 9, 2026</div>
       </div>
       <!-- Legend -->
       <div style="display:flex;align-items:center;gap:20px;font-size:11px;color:var(--text2);flex-wrap:wrap;">
@@ -3163,6 +3168,12 @@
 
     <div class="rt-wrap">
 
+      <!-- ══════════ ARCHIVED: APRIL + MAY 2026 ══════════ -->
+      <details style="margin-bottom:16px;">
+        <summary style="cursor:pointer;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);padding:10px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;list-style:none;display:flex;align-items:center;gap:8px;">
+          <span style="font-size:14px;">📁</span> Archived — April &amp; May 2026 <span style="font-weight:400;font-size:10px;margin-left:auto;">click to expand</span>
+        </summary>
+        <div style="opacity:0.6;margin-top:8px;">
       <!-- ══════════ APRIL 2026 ══════════ -->
       <div class="rt-month">
         <div class="rt-month-hdr">
@@ -3293,11 +3304,14 @@
         </div>
       </div>
 
+        </div>
+      </details>
+
       <!-- ══════════ JUNE 2026 ══════════ -->
       <div class="rt-month">
         <div class="rt-month-hdr">
           <span class="rt-month-name">June 2026</span>
-          <span class="rt-month-count">3 events</span>
+          <span class="rt-month-count">4 events</span>
         </div>
         <div class="rt-day-hdr"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
         <div class="rt-grid">
@@ -3334,7 +3348,17 @@
             </div>
           </div>
           <div class="rt-cell"><div class="rt-num">10</div></div><div class="rt-cell"><div class="rt-num">11</div></div><div class="rt-cell"><div class="rt-num">12</div></div><div class="rt-cell"><div class="rt-num">13</div></div><div class="rt-cell"><div class="rt-num">14</div></div>
-          <div class="rt-cell"><div class="rt-num">15</div></div><div class="rt-cell"><div class="rt-num">16</div></div><div class="rt-cell"><div class="rt-num">17</div></div><div class="rt-cell"><div class="rt-num">18</div></div><div class="rt-cell"><div class="rt-num">19</div></div><div class="rt-cell"><div class="rt-num">20</div></div><div class="rt-cell"><div class="rt-num">21</div></div>
+          <div class="rt-cell"><div class="rt-num">15</div></div><div class="rt-cell"><div class="rt-num">16</div></div>          <!-- Jun 17 — SpeakEasy Episode -->
+          <div class="rt-cell">
+            <div class="rt-num">17</div>
+            <div class="rt-ev release" data-tip='<div class="tip-title">Devoted Talks SpeakEasy — New Episode</div><div class="tip-sub">YouTube · Devoted Talks channel</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">New SpeakEasy episode drops June 17, 2026. First episode in 2026 after the production pause.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Coordinate LinkedIn teaser post + clip within 24h of release. Activate co-dev / thought leadership angle. Tag the guest.</div>'>
+              <div class="rt-ev-tag release">● Episode</div>
+              <div class="rt-ev-name">SpeakEasy Episode Release</div>
+              <div class="rt-ev-meta">Devoted Talks · YouTube</div>
+              <div class="rt-ev-badges"><span class="rt-badge working">Scheduled</span></div>
+            </div>
+          </div>
+          <div class="rt-cell"><div class="rt-num">18</div></div><div class="rt-cell"><div class="rt-num">19</div></div><div class="rt-cell"><div class="rt-num">20</div></div><div class="rt-cell"><div class="rt-num">21</div></div>
           <div class="rt-cell"><div class="rt-num">22</div></div><div class="rt-cell"><div class="rt-num">23</div></div><div class="rt-cell"><div class="rt-num">24</div></div><div class="rt-cell"><div class="rt-num">25</div></div><div class="rt-cell"><div class="rt-num">26</div></div><div class="rt-cell"><div class="rt-num">27</div></div><div class="rt-cell"><div class="rt-num">28</div></div>
           <div class="rt-cell"><div class="rt-num">29</div></div><div class="rt-cell"><div class="rt-num">30</div></div>
           <div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div>
@@ -3343,12 +3367,113 @@
 
     </div><!-- /rt-wrap -->
 
-    <!-- Upcoming Jul+ -->
+
+      <!-- ══════════ JULY 2026 ══════════ -->
+      <div class="rt-month">
+        <div class="rt-month-hdr">
+          <span class="rt-month-name">July 2026</span>
+          <span class="rt-month-count">4 events</span>
+        </div>
+        <div class="rt-day-hdr"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        <div class="rt-grid">
+          <div class="rt-cell empty"></div><div class="rt-cell empty"></div>
+          <div class="rt-cell"><div class="rt-num">1</div></div>
+          <div class="rt-cell"><div class="rt-num">2</div></div>
+          <div class="rt-cell"><div class="rt-num">3</div></div>
+          <div class="rt-cell"><div class="rt-num">4</div></div>
+          <div class="rt-cell"><div class="rt-num">5</div></div>
+          <div class="rt-cell"><div class="rt-num">6</div></div><div class="rt-cell"><div class="rt-num">7</div></div><div class="rt-cell"><div class="rt-num">8</div></div><div class="rt-cell"><div class="rt-num">9</div></div><div class="rt-cell"><div class="rt-num">10</div></div><div class="rt-cell"><div class="rt-num">11</div></div><div class="rt-cell"><div class="rt-num">12</div></div>
+          <div class="rt-cell"><div class="rt-num">13</div></div><div class="rt-cell"><div class="rt-num">14</div></div><div class="rt-cell"><div class="rt-num">15</div></div><div class="rt-cell"><div class="rt-num">16</div></div><div class="rt-cell"><div class="rt-num">17</div></div><div class="rt-cell"><div class="rt-num">18</div></div><div class="rt-cell"><div class="rt-num">19</div></div>
+          <div class="rt-cell"><div class="rt-num">20</div></div><div class="rt-cell"><div class="rt-num">21</div></div><div class="rt-cell"><div class="rt-num">22</div></div><div class="rt-cell"><div class="rt-num">23</div></div><div class="rt-cell"><div class="rt-num">24</div></div><div class="rt-cell"><div class="rt-num">25</div></div><div class="rt-cell"><div class="rt-num">26</div></div>
+          <!-- Jul TBD — FIFA: Heroes (Netflix) -->
+          <div class="rt-cell">
+            <div class="rt-num">27</div>
+            <div class="rt-ev release" data-tip='<div class="tip-title">FIFA: Heroes (Netflix)</div><div class="tip-sub">Delphi / Refactor Games · PP-3624 · BD: Ninel</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">FIFA: Heroes — Netflix mobile game featuring legendary players. STUDIO contributed 3D character animation. Exact July date TBD.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Netflix × FIFA = massive audience. Post as soon as launch announced publicly. Strong art credibility story.</div><span class="tip-jira">PP-3624</span>'>
+              <div class="rt-ev-tag release">● Release</div>
+              <div class="rt-ev-name">FIFA: Heroes (Netflix)</div>
+              <div class="rt-ev-meta">Delphi / Refactor · BD: <strong>Ninel A.</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge art">Art</span><span class="rt-badge working">To be posted</span></div>
+            </div>
+          </div>
+          <div class="rt-cell"><div class="rt-num">28</div></div>
+          <!-- Jul TBD — Argos -->
+          <div class="rt-cell">
+            <div class="rt-num">29</div>
+            <div class="rt-ev release" data-tip='<div class="tip-title">Argos</div><div class="tip-sub">Otherside Entertainment · BD: Yasmin</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">Argos — active live game with major update post May 2026. Co-dev partnership with STUDIO. Exact date TBD.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Co-dev + live game = great ongoing content. Update the post when Otherside announces publicly.</div>'>
+              <div class="rt-ev-tag release">● Update</div>
+              <div class="rt-ev-name">Argos</div>
+              <div class="rt-ev-meta">Otherside Ent. · BD: <strong>Yasmin R.</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge codev">Co-dev</span><span class="rt-badge working">To be posted</span></div>
+            </div>
+          </div>
+          <div class="rt-cell">
+            <div class="rt-num">30</div>
+            <div class="rt-ev release" data-tip='<div class="tip-title">Fading Echo</div><div class="tip-sub">New Tales · Steam</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">Fading Echo — Steam demo currently available. Full release expected 2026. STUDIO contributed game design &amp; VFX.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Indie narrative game with strong visual identity — good co-dev story for art-focused audience.</div>'>
+              <div class="rt-ev-tag release">● Release</div>
+              <div class="rt-ev-name">Fading Echo</div>
+              <div class="rt-ev-meta">New Tales · Steam · <strong>Art</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge art">Art</span><span class="rt-badge working">To be posted</span></div>
+            </div>
+          </div>
+          <div class="rt-cell">
+            <div class="rt-num">31</div>
+            <div class="rt-ev update" data-tip='<div class="tip-title">Top Goal: Soccer Champion</div><div class="tip-sub">Zynga / Nordeus · PP-3719</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">Mobile soccer game by Zynga/Nordeus. 3D heads pipeline delivered by STUDIO. Launch announced for 2026.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Zynga brand recognition — good co-dev visibility opportunity once publicly announced.</div><span class="tip-jira">PP-3719</span>'>
+              <div class="rt-ev-tag update">● Release</div>
+              <div class="rt-ev-name">Top Goal: Soccer Champion</div>
+              <div class="rt-ev-meta">Zynga / Nordeus · BD: <strong>STUDIO</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge art">Art</span><span class="rt-badge working">To be posted</span></div>
+            </div>
+          </div>
+          <div class="rt-cell empty"></div><div class="rt-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- ══════════ AUGUST 2026 ══════════ -->
+      <div class="rt-month">
+        <div class="rt-month-hdr">
+          <span class="rt-month-name">August 2026</span>
+          <span class="rt-month-count">2 events</span>
+        </div>
+        <div class="rt-day-hdr"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+        <div class="rt-grid">
+          <div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div>
+          <div class="rt-cell"><div class="rt-num">1</div></div><div class="rt-cell"><div class="rt-num">2</div></div>
+          <div class="rt-cell"><div class="rt-num">3</div></div><div class="rt-cell"><div class="rt-num">4</div></div><div class="rt-cell"><div class="rt-num">5</div></div><div class="rt-cell"><div class="rt-num">6</div></div><div class="rt-cell"><div class="rt-num">7</div></div><div class="rt-cell"><div class="rt-num">8</div></div><div class="rt-cell"><div class="rt-num">9</div></div>
+          <div class="rt-cell"><div class="rt-num">10</div></div><div class="rt-cell"><div class="rt-num">11</div></div><div class="rt-cell"><div class="rt-num">12</div></div><div class="rt-cell"><div class="rt-num">13</div></div><div class="rt-cell"><div class="rt-num">14</div></div><div class="rt-cell"><div class="rt-num">15</div></div><div class="rt-cell"><div class="rt-num">16</div></div>
+          <div class="rt-cell"><div class="rt-num">17</div></div><div class="rt-cell"><div class="rt-num">18</div></div><div class="rt-cell"><div class="rt-num">19</div></div><div class="rt-cell"><div class="rt-num">20</div></div><div class="rt-cell"><div class="rt-num">21</div></div><div class="rt-cell"><div class="rt-num">22</div></div><div class="rt-cell"><div class="rt-num">23</div></div>
+          <!-- Aug TBD — Last Flag Console -->
+          <div class="rt-cell">
+            <div class="rt-num">24</div>
+            <div class="rt-ev release" data-tip='<div class="tip-title">Last Flag — Console Release</div><div class="tip-sub">Night Street Games · PP-3289 · BD: Alina G.</div><hr><div class="tip-label">What&apos;s releasing</div><div class="tip-val">PS5 &amp; Xbox console ports of Last Flag — 5v5 hero shooter. PC launched Apr 14, 2026. Console due Summer 2026.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Console launch = second bite at the content apple. Reactivate Last Flag content with new platform angle.</div><span class="tip-jira">PP-3289</span>'>
+              <div class="rt-ev-tag release">● Release</div>
+              <div class="rt-ev-name">Last Flag — Console</div>
+              <div class="rt-ev-meta">Night Street Games · BD: <strong>Alina G.</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge dev">Dev</span><span class="rt-badge working">Summer 2026 TBD</span></div>
+            </div>
+          </div>
+          <div class="rt-cell"><div class="rt-num">25</div></div><div class="rt-cell"><div class="rt-num">26</div></div><div class="rt-cell"><div class="rt-num">27</div></div><div class="rt-cell"><div class="rt-num">28</div></div>
+          <!-- Aug TBD — Riftbound expansion -->
+          <div class="rt-cell">
+            <div class="rt-num">29</div>
+            <div class="rt-ev update" data-tip='<div class="tip-title">Riftbound — Next Set</div><div class="tip-sub">Riot Games · PP-3624</div><hr><div class="tip-label">What&apos;s coming</div><div class="tip-val">Riftbound card game next expansion cycle. STUDIO producing 2D card illustrations (Batch 3+). Set 3 launched May 8.</div><div class="tip-label">Marketing angle</div><div class="tip-val">Ongoing Riot partnership — post per batch delivery as client approvals come through.</div><span class="tip-jira">PP-3624</span>'>
+              <div class="rt-ev-tag update">● Update</div>
+              <div class="rt-ev-name">Riftbound — Next Set</div>
+              <div class="rt-ev-meta">Riot Games · BD: <strong>Ninel A.</strong></div>
+              <div class="rt-ev-badges"><span class="rt-badge art">Art</span><span class="rt-badge working">In Production</span></div>
+            </div>
+          </div>
+          <div class="rt-cell"><div class="rt-num">30</div></div>
+          <div class="rt-cell"><div class="rt-num">31</div></div>
+          <div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div><div class="rt-cell empty"></div>
+        </div>
+      </div>
+
+    <!-- Upcoming Q3+ -->
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);">Also on radar · Jul 2026+</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);">Also on radar · Q4 2026+</div>
       <div style="display:flex;flex-wrap:wrap;gap:8px;">
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:10px;color:var(--text2);">
-          <strong style="color:var(--text);">Argos</strong> · Otherside Ent. · BD: Yasmin · Co-dev · <span style="color:var(--warn);">Jul TBD</span> · <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--text3);">PP-3055</span>
+          <strong style="color:var(--text);">Heroes vs Hordes: The Walking Dead</strong> · Ares Interactive · Porting to Steam/Epic/Switch 1&amp;2 · <span style="color:var(--warn);">2026 TBD</span>
         </div>
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:10px;color:var(--text2);">
           <strong style="color:var(--text);">FIFA: Heroes (Netflix)</strong> · Delphi / Refactor · BD: Ninel · Art · <span style="color:var(--warn);">Summer 2026</span> · <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--text3);">PP-3624</span>
